@@ -4,3 +4,7 @@ module "aws-dev" {
     region_aws = "us-east-1"
     key = "IaC-DEV"
 }
+
+output "IP" {
+    value = module.aws-dev.Ip_publico
+}
