@@ -25,7 +25,7 @@ resource "aws_instance" "app_server" {
     }
 }
 
-# resource "aws_key_pair" "chaveSSH" {
-#     key_name = var.key
-#     public_key = file("${var.key}.pub")
-# }
+resource "aws_key_pair" "chaveSSH" {
+    key_name = var.key
+    public_key = file("${var.key}.pub")
+}
