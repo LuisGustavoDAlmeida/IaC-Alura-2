@@ -13,7 +13,7 @@ provider "aws" {
 resource "aws_instance" "app_server" {  
     ami = "ami-04b70fa74e45c3917"  
     instance_type = var.instance
-    key_name = var.key
+    # key_name = var.key
     # user_data = <<-EOF
     #     #!/bin/bash
     #     cd /home/ubuntu
@@ -25,7 +25,7 @@ resource "aws_instance" "app_server" {
     }
 }
 
-resource "aws_key_pair" "chaveSSH" {
-    key_name = var.key
-    public_key = file("${var.key}.pub")
-}
+# resource "aws_key_pair" "chaveSSH" {
+#     key_name = var.key
+#     public_key = file("${var.key}.pub")
+# }
