@@ -13,7 +13,7 @@ provider "aws" {
 resource "aws_instance" "app_server" {  
     ami = "ami-04b70fa74e45c3917"  
     instance_type = var.instance
-    # key_name = var.key
+    key_name = var.key
     # user_data = <<-EOF
     #     #!/bin/bash
     #     cd /home/ubuntu
