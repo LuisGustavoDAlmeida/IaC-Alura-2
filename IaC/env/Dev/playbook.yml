@@ -21,7 +21,6 @@
   - name: Iniciando projeto
     shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/'
     when: not projeto.stat.exists
-
     ignore_errors: yes
   - name: Alterando o hosts do settings
     lineinfile: 
