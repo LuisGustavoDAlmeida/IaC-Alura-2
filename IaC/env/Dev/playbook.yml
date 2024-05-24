@@ -13,8 +13,15 @@
       name: 
         - django
         - djangorestframework
+        
+  - name: Verificando existência do projeto
+    stat: # Verifica o estado do arquivo
+      path: ~/tcc/setup/settings.py # Toda vez que o projeto Django é iniciado ele cria o settings.py
+    register: projeto # Para registrar/criar uma variável
   - name: Iniciando projeto
-    shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/' 
+    shell: '. /home/ubuntu/tcc/venv/bin/activate; django-admin startproject setup /home/ubuntu/tcc/'
+    when: not projeto.stat.exists
+
     ignore_errors: yes
   - name: Alterando o hosts do settings
     lineinfile: 
